@@ -15,15 +15,12 @@ async function getBookedDates(): Promise<BookedDate[]> {
   const supabase = createClient(cookieStore);
 
   const { data, error } = await supabase
-    .from('reservations')
-    .select('
-      event_date,
-      status,
-      spaces (id, name)
-    ')
-    // Solo considerar reservaciones que no estén canceladas o completadas para la disponibilidad futura
-    // .in('status', ['pending', 'confirmed'])
-    .order('event_date', { ascending: true });
+  .from('reservations')
+  .select(`
+    event_date,
+    status,
+    spaces (id, name)
+  `);
 
   if (error) {
     console.error('Error fetching booked dates:', error);

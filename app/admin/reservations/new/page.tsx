@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import Link from 'next/link';
-import { createReservationAction, ReservationFormState } from './actions';
-import { createClient } from '@/lib/supabase/client'; // Usar cliente de navegador para fetches en cliente
+import { createReservationAction, ReservationFormState } from '../actions';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client'; // Usar cliente de navegador para fetches en cliente
 
 interface Client {
   id: number;
@@ -37,7 +37,7 @@ export default function NewReservationPage() {
   const [state, formAction] = useFormState(createReservationAction, initialState);
   const [clients, setClients] = useState<Client[]>([]);
   const [spaces, setSpaces] = useState<Space[]>([]);
-  const supabase = createClient(); // Cliente Supabase para el navegador
+  const supabase = createSupabaseBrowserClient(); // Cliente Supabase para el navegador
 
   useEffect(() => {
     async function fetchData() {

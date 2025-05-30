@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState, useTransition, useEffect } from 'react';
-import { updateSpaceAction } from '../actions'; // Server Action que crearemos en app/admin/spaces/actions.ts
+import { updateSpaceAction } from '../../actions';
 
 interface Space {
   id: string;

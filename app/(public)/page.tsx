@@ -123,8 +123,8 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-gray-700">
-                "Nuestra boda fue absolutamente perfecta gracias a Fiesta Elegante. 
-                El servicio fue impecable y nuestros invitados quedaron encantados."
+                &quot;Nuestra boda fue absolutamente perfecta gracias a Fiesta Elegante. 
+                El servicio fue impecable y nuestros invitados quedaron encantados.&quot;
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
@@ -138,8 +138,8 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-gray-700">
-                "Organizamos nuestro evento de fin de año con Fiesta Elegante y superó 
-                nuestras expectativas. Profesionales en todo momento."
+                &quot;Organizamos nuestro evento de fin de año con Fiesta Elegante y superó 
+                nuestras expectativas. Profesionales en todo momento.&quot;
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
@@ -153,8 +153,8 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-gray-700">
-                "El cumpleaños de mi hija fue mágico. La decoración, la comida, 
-                todo fue exactamente como lo imaginamos. ¡Repetiremos seguro!"
+                &quot;El cumpleaños de mi hija fue mágico. La decoración, la comida, 
+                todo fue exactamente como lo imaginamos. ¡Repetiremos seguro!&quot;
               </p>
             </div>
           </div>

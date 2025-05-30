@@ -1,4 +1,4 @@
-- Script para crear la base de datos del Sistema de Gestión de Eventos
+-- Script para crear la base de datos del Sistema de Gestión de Eventos
 -- Compatible con PostgreSQL y Supabase
 -- Incluye tabla de Perfiles para información adicional del usuario y rol básico
 
@@ -319,5 +319,3 @@ CREATE INDEX idx_profiles_is_admin ON profiles(is_admin); -- Índice útil para 
 4.  **RLS (Row Level Security):** Sigue siendo **crucial** configurar las políticas RLS en Supabase para todas las tablas, especialmente `profiles` y las relacionadas con datos sensibles.
 5.  **Migraciones:** Se recomienda usar las migraciones de Supabase para aplicar estos cambios.
 6.  **`ON DELETE`:** Revisa las acciones `ON DELETE` según la lógica de tu negocio.
-
-Este script actualizado ahora incluye la estructura para manejar perfiles de usuario y un rol básico de administrador directamente vinculado a la autenticación de Supaba

@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState, useTransition, useEffect } from 'react';
-import { updateClientAction } from '../actions'; 
+import { updateClientAction } from '../../actions';
 
 interface Client {
   id: string;

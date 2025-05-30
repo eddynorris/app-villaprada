@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // Estilos por defecto
 import { BookedDate } from './page'; // Importar el tipo desde el server component
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 
 interface AvailabilityCalendarProps {
   bookedDates: BookedDate[];
@@ -36,13 +36,16 @@ export default function AvailabilityCalendar({ bookedDates }: AvailabilityCalend
     return null;
   };
 
-  const handleDateClick = (clickedDate: Date) => {
+  const handleDateChange = (value: Value) => {
+    if (value === null) return;
+    const clickedDate = Array.isArray(value) ? value[0] : value;
+    if (clickedDate === null) return;
     const dateString = format(clickedDate, 'yyyy-MM-dd');
     const info = bookedDates.find(bd => bd.date === dateString) || null;
     setSelectedDateInfo(info);
     onChange(clickedDate);
   };
-  
+
   const bookedDatesSet = useMemo(() => {
     return new Set(bookedDates.map(bd => bd.date));
   }, [bookedDates]);
@@ -64,7 +67,7 @@ export default function AvailabilityCalendar({ bookedDates }: AvailabilityCalend
     <div className="flex flex-col md:flex-row gap-6">
       <div className="md:w-1/2">
         <Calendar
-          onChange={handleDateClick} // Usar nuestro manejador para actualizar la info seleccionada
+          onChange={handleDateChange} // Usar nuestro manejador para actualizar la info seleccionada
           value={value}
           tileClassName={tileClassName}
           tileDisabled={tileDisabled}
